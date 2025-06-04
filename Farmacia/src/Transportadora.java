@@ -9,4 +9,25 @@ public class Transportadora {
         this.nome = nome;
         this.locaisAtendimento = new ArrayList<>(locaisAtendimento);
     }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public List<String> getLocaisAtendimento() {
+        return locaisAtendimento;
+    }
+
+    public void setLocaisAtendimento(List<String> locaisAtendimento) {
+        this.locaisAtendimento = locaisAtendimento;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Transportadora: %s, Atende: %s", nome, String.join(", ", locaisAtendimento));
+    }
 }
