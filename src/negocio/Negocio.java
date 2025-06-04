@@ -20,6 +20,12 @@ public class Negocio {
         this.valorTotalNegocio = valorTotalNegocio;
     }
 
+    public Double calcularValorTotal(){
+        return 0.0;
+    }
+
+
+
     public UUID getId() {
         return id;
     }
