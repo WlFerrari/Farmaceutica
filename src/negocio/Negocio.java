@@ -2,6 +2,7 @@ package negocio;
 
 import java.util.UUID;
 
+//id utilizando uuid
 public class Negocio {
     private UUID id;
     private TipoNegocio tipo;
