@@ -1,5 +1,6 @@
 package com.empresa.farmaceutica;
 
+import java.util.List;
 import java.util.UUID;
 
 //id utilizando uuid
@@ -20,13 +21,19 @@ public class Negocio {
         this.valorTotalNegocio = valorTotalNegocio;
     }
 
-    public Double calcularValorTotal(){
-        return 0.0;
+    private void calcularValorTotal() {
+        this.valorTotalNegocio = 0;
+        for (ItemNegocio item : itens) {
+            if (tipo == TipoNegocio.VENDA) {
+                this.valorTotalNegocio += item.getProduto().getPrecoVenda() * item.getQuantidade();
+            } else { // COMPRA
+                this.valorTotalNegocio += item.getProduto().getPrecoCompra() * item.getQuantidade();
+            }
+        }
     }
 
 
-
-    public UUID getId() {
+    public UUID getIdNegocio() {
         return id;
     }
 

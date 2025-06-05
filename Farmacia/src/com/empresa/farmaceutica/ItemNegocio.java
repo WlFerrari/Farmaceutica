@@ -28,6 +28,6 @@ public class ItemNegocio {
 
     @Override
     public String toString() {
-        return "com.empresa.farmaceutica.Produto: " + this.produto.toString() + ", Quantidade: " + this.quantidade;
+        return "Produto: " + this.produto.toString() + ", Quantidade: " + this.quantidade;
     }
 }

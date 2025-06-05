@@ -59,8 +59,15 @@ public class Setor {
         return cargos;
     }
 
+
     public void setCargos(ArrayList<Cargo> cargos) {
         this.cargos = cargos;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Setor: %s, Cargo: %s (%d/%d funcionários)",
+                nome, getCargos(), getQtdMaximaFuncionarios(), qtdMaximaFuncionarios);
     }
 
     

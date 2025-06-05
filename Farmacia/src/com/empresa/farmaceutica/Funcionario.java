@@ -39,28 +39,28 @@ public class Funcionario {
         return contador;
     }
     
-    public int getId() {
+    public int getIdFuncionario() {
         return id;
     }
    
-    public String getNome() {
+    public String getNomeFuncionario() {
         return nome;
     }
-    public void setNome(String nome) {
+    public void setNomeFuncionario(String nome) {
         this.nome = nome;
     }
-    public int getIdade() {
+    public int getIdadeFuncionario() {
         return idade;
     }
-    public void setIdade(int idade) {
+    public void setIdadeFuncionario(int idade) {
         this.idade = idade;
     }
 
-    public Genero getGenero() {
+    public Genero getGeneroFuncionario() {
         return genero;
     }
 
-    public void setGenero(Genero genero) {
+    public void setGeneroFuncionario(Genero genero) {
         this.genero = genero;
     }
 
