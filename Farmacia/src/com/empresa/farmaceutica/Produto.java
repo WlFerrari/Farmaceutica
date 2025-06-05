@@ -1,21 +1,16 @@
 package com.empresa.farmaceutica;
 
-// Classe temporaria para teste
 public class Produto {
     private int idProduto;
-    private String nome;
+    private String nomeProduto;
     private double precoCompra;
     private double precoVenda;
-    private int estoque;
 
-    public Produto(int idProduto, String nome, double precoCompra, double precoVenda, int estoque) {
+    public Produto(int idProduto, String nomeProduto, double precoCompra, double precoVenda){
         this.idProduto = idProduto;
-        this.nome = nome;
+        this.nomeProduto = nomeProduto;
         this.precoCompra = precoCompra;
         this.precoVenda = precoVenda;
-        this.estoque = estoque;
-
-
     }
 
     public int getIdProduto() {
@@ -26,12 +21,12 @@ public class Produto {
         this.idProduto = idProduto;
     }
 
-    public String getNome() {
-        return nome;
+    public String getNomeProduto() {
+        return nomeProduto;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNomeProduto(String nomeProduto) {
+        this.nomeProduto = nomeProduto;
     }
 
     public double getPrecoCompra() {
@@ -48,18 +43,5 @@ public class Produto {
 
     public void setPrecoVenda(double precoVenda) {
         this.precoVenda = precoVenda;
-    }
-
-    public int getEstoque() {
-        return estoque;
-    }
-
-    public void setEstoque(int estoque) {
-        this.estoque = estoque;
-    }
-
-    @Override
-    public String toString() {
-        return "ID: " + this.idProduto + ", Nome: " + this.nome + ", Preço Compra: " + this.precoCompra + ", Preço Venda: " + this.precoVenda + ", Estoque: " + this.estoque;
     }
 }

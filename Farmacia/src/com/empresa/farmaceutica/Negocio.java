@@ -1,4 +1,4 @@
-package negocio;
+package com.empresa.farmaceutica;
 
 import java.util.UUID;
 

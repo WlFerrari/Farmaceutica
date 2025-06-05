@@ -1,3 +1,5 @@
+package com.empresa.farmaceutica;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,6 +30,6 @@ public class Transportadora {
 
     @Override
     public String toString() {
-        return String.format("Transportadora: %s, Atende: %s", nome, String.join(", ", locaisAtendimento));
+        return String.format("com.empresa.farmaceutica.Transportadora: %s, Atende: %s", nome, String.join(", ", locaisAtendimento));
     }
 }

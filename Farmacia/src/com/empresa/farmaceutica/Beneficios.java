@@ -1,3 +1,5 @@
+package com.empresa.farmaceutica;
+
 public class Beneficios {
     private double valeRefeicao;
     private double valeAlimentacao;

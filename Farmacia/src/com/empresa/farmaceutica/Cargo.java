@@ -1,11 +1,13 @@
+package com.empresa.farmaceutica;
+
 public class Cargo {
     private String nome;
     private double salarioBase;
-    private Beneficio beneficio;
+    private Beneficios beneficio;
 
     
     
-    public Cargo(String nome, double salarioBase, Beneficio beneficio) {
+    public Cargo(String nome, double salarioBase, Beneficios beneficio) {
         this.nome = nome;
         this.salarioBase = salarioBase;
         this.beneficio = beneficio;
@@ -24,10 +26,10 @@ public class Cargo {
         this.salarioBase = salarioBase;
     }
     
-    public Beneficio getBeneficio() {
+    public Beneficios getBeneficio() {
         return beneficio;
     }
-    public void setBeneficio(Beneficio beneficio) {
+    public void setBeneficio(Beneficios beneficio) {
         this.beneficio = beneficio;
     }
     

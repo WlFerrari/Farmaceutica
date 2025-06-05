@@ -1,7 +1,8 @@
 package com.empresa.farmaceutica;
 
 public class CalculadoraIR {
-    public static double calcular(double baseCalculo){
+
+    public static double Calcular(double baseCalculo){
         if(baseCalculo <= 2428.80){
             return baseCalculo;
         } else if(baseCalculo >= 2428.81 && baseCalculo <= 2826.65){

@@ -1,3 +1,5 @@
+package com.empresa.farmaceutica;
+
 import java.util.ArrayList;
 
 public class Setor {
@@ -45,7 +47,7 @@ public class Setor {
 
             //Exceção a ser lançada caso a quantidade de integrantes no setor seja atingida
             /* 
-            throw new CapacidadeMaximaSetorException(
+            throw new com.empresa.farmaceutica.CapacidadeMaximaSetorException(
                 "Não é possível adicionar funcionário no setor, pois a quantidade máxima de integrantes no setor foi atingida."
             );
             */

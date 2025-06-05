@@ -1,3 +1,5 @@
+package com.empresa.farmaceutica;
+
 public class Funcionario {
     private static int contador = 0;
 
@@ -88,7 +90,7 @@ public class Funcionario {
     
     //Retorna o salário liquido após a dedução do imposto
     public double calcularSalario(){
-        return calcular(getCargo().getSalarioBase());
+        return CalculadoraIR.Calcular(getCargo().getSalarioBase());
     }
     
 
