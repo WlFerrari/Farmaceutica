@@ -92,6 +92,20 @@ public class Funcionario {
     public double calcularSalario(){
         return CalculadoraIR.Calcular(getCargo().getSalarioBase());
     }
-    
 
+    public void renderInformacoes(){
+        System.out.println("ID DO FUNCIONARIO: " + this.id);
+        System.out.println("NOME DO FUNCIONARIO: " + this.nome);
+        System.out.println("CARGO DO FUNCIONARIO: " + this.cargo);
+        System.out.println("SALARIO BRUTO DO CARGO: "+ this.cargo.getSalarioBase());
+
+        //VERIFICAR CALCULO DA PL
+        System.out.println("SALARIO LIQUIDO (DEDUZIDO O IMPOSTO DE RENDA: " + calcularSalario());
+        System.out.println("VALOR DOS BENEFICIOS: ");
+        System.out.println("VALE REFEICAO: " + this.cargo.getBeneficio().getValeRefeicao());
+        System.out.println("VALE ALIMENTACAO: "+this.cargo.getBeneficio().getValeAlimentacao());
+        System.out.println("VALE TRANSPORTE: "+ this.cargo.getBeneficio().getValeTransporte());
+        System.out.println("PLANO ODONTOLOGICO: "+ this.cargo.getBeneficio().getPlanoOdontologico());
+        System.out.println("VALE PLANO DE SAUDE: "+ this.cargo.getBeneficio().getPlanoSaude());
+    }
 }

@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Transportadora {
     private String nome;
-    private List<String> locaisAtendimento = new ArrayList<String>();
+    private List<String> locaisAtendimento;
 
     public Transportadora(String nome, List<String> locaisAtendimento) {
         this.nome = nome;
