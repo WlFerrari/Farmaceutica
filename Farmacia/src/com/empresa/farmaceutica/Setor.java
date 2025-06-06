@@ -5,14 +5,14 @@ import java.util.ArrayList;
 public class Setor {
     private String nome;
     private int qtdMaximaFuncionarios;
-    private ArrayList<Funcionario> funcionarios;
     private ArrayList<Cargo> cargos;
+    private ArrayList<Funcionario> funcionarios;
     
     public Setor(String nome, int qtdMaximaFuncionarios, ArrayList<Cargo> cargos) {
         this.nome = nome;
         this.qtdMaximaFuncionarios = qtdMaximaFuncionarios;
-        this.funcionarios = new ArrayList<>();
         this.cargos = cargos;
+        this.funcionarios = new ArrayList<>();
     }
 
     public String getNome() {

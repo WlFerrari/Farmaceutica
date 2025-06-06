@@ -2,7 +2,6 @@ package com.empresa.farmaceutica;
 
 public class Funcionario {
     private static int contador = 0;
-
     private int id;
     private String nome;
     private int idade;
@@ -10,30 +9,29 @@ public class Funcionario {
     private Setor setor;
     private Cargo cargo;
     private double bonificacoesLucros;
-    
 
-    public Funcionario(int id, String nome, int idade, Genero genero, Setor setor, Cargo cargo) {
-
-        //Somente atribuirá o cargo ao funcionário, caso o cargo informado exista no array de cargos existentes no setor
-        for(Cargo c : getSetor().getCargos()){
-            if(cargo.getNome().toLowerCase().equals(c)){
-                this.cargo = cargo;
-            }else{
-                System.out.println("O cargo digitado não é relativo ao setor "+setor.getNome());
-                //Implementar exception posteriormente
-                return;
+    public Funcionario(String nome, int idade, Genero genero, Setor setor, Cargo cargo) throws CargoInvalidoException {
+        boolean cargoValido = false;
+        for (Cargo c : setor.getCargos()) {
+            if (cargo.getNome().equalsIgnoreCase(c.getNome())) {
+                cargoValido = true;
+                break;
             }
         }
 
-        //Atribui um id unico ao funcionario, com base no contador estatico
+        if (!cargoValido) {
+            throw new CargoInvalidoException("O cargo '" + cargo.getNome() + "' não pertence ao setor '" + setor.getNome() + "'.");
+        }
+
         this.id = ++contador;
-        
         this.nome = nome;
         this.idade = idade;
         this.genero = genero;
         this.setor = setor;
+        this.cargo = cargo;
         this.bonificacoesLucros = 0;
     }
+
 
     public static int getContador() {
         return contador;
@@ -108,4 +106,10 @@ public class Funcionario {
         System.out.println("PLANO ODONTOLOGICO: "+ this.cargo.getBeneficio().getPlanoOdontologico());
         System.out.println("VALE PLANO DE SAUDE: "+ this.cargo.getBeneficio().getPlanoSaude());
     }
+
+//    @Override
+//    public String toString() {
+//        return String.format("ID FUNCIONARIO: %d, \nNOME FUNCIONÁRIO: %s, \nCARGO FUNCIONARIO: %s, " +
+//                "\nSALARIO BRUTO DO CARGO, \nSALARIO LIQUIDO (DEDUZIDO O IMPOSTO DE RENDA): %d, ")
+//    }
 }

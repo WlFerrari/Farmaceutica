@@ -5,8 +5,6 @@ public class Cargo {
     private double salarioBase;
     private Beneficios beneficio;
 
-    
-    
     public Cargo(String nome, double salarioBase, Beneficios beneficio) {
         this.nome = nome;
         this.salarioBase = salarioBase;

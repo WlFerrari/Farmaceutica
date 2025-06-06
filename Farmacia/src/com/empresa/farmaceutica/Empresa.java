@@ -7,7 +7,6 @@ public class Empresa {
     private List<Funcionario> todosFuncionarios;
     private Map<String, Setor> setores;
     private List<Produto> catalogoProdutos;
-    private List<Transportadora> transportadorasParceiras;
     private List<Negocio> catalogoNegocios;
     private List<Transportadora> transportadoras;
 
@@ -16,7 +15,6 @@ public class Empresa {
         this.todosFuncionarios = new ArrayList<>();
         this.setores = new HashMap<>();
         this.catalogoProdutos = new ArrayList<>();
-        this.transportadorasParceiras = new ArrayList<>();
         this.catalogoNegocios = new ArrayList<>();
         this.transportadoras = new ArrayList<>();
         inicializarSetores();
@@ -61,7 +59,7 @@ public class Empresa {
         Cargo analistaRemuneracaoBeneficios = new Cargo("analista de remuneração e benefícios", 2500.00, beneficiosTipo1);
 
         //criação do Setor Gestão de pessoas, passando os cargos existentes para este setor
-        setores.put("gestaoDePessoas", new Setor("gestaoDePessoas", 4, new ArrayList<Cargo>(Arrays.asList(analistaRecursosHumanos, recrutador, analistaRecursosHumanos))));
+        setores.put("gestaoDePessoas", new Setor("gestaoDePessoas", 4, new ArrayList<Cargo>(Arrays.asList(analistaRecursosHumanos, recrutador, analistaRemuneracaoBeneficios))));
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------
         //BLOCO DE INSTANCIAÇÃO DO SETOR FINANCEIRO
@@ -106,8 +104,8 @@ public class Empresa {
 
     }
 
-    public void adicionarFuncionario(Funcionario func){
-        try{
+    public void adicionarFuncionario(Funcionario func) {
+        try {
             boolean idJaExiste = todosFuncionarios.stream()
                     .anyMatch(funcionarioExistente -> funcionarioExistente.getIdFuncionario() == func.getIdFuncionario());
 
@@ -119,13 +117,13 @@ public class Empresa {
                 System.out.println("Erro: Funcionário com ID " + func.getIdFuncionario() + " já existe na lista geral.");
                 throw new Exception();
             }
-        } catch(Exception e){
+        } catch (Exception e) {
             System.out.println("Não foi possível adicional um Funcionario");
         }
     }
 
-    public void adicionarProduto(Produto prod){
-        try{
+    public void adicionarProduto(Produto prod) {
+        try {
             boolean idJaExiste = catalogoProdutos.stream()
                     .anyMatch(produtoExistente -> produtoExistente.getIdProduto() == prod.getIdProduto());
 
@@ -137,31 +135,31 @@ public class Empresa {
                 System.out.println("Erro: Produto com ID " + prod.getIdProduto() + " já existe na lista geral.");
                 throw new Exception();
             }
-        } catch(Exception e){
-            System.out.println("Não foi possível adicional um Produto");
+        } catch (Exception e) {
+            System.out.println("Não foi possível adicionar um Produto");
         }
     }
 
-    public void adicionarTransportadora(Transportadora trans){
-        try{
-            boolean idJaExiste = transportadorasParceiras.stream()
+    public void adicionarTransportadora(Transportadora trans) {
+        try {
+            boolean idJaExiste = transportadoras.stream()
                     .anyMatch(transportadorasExistente -> transportadorasExistente.getNome().equals(trans.getNome()));
 
             if (!idJaExiste) {
-                this.transportadorasParceiras.add(trans);
+                this.transportadoras.add(trans);
                 System.out.println("Tranportadora " + trans.getNome() + " adicionado com sucesso.");
 
             } else {
                 System.out.println("Erro: Transportadora com o nome " + trans.getNome() + " já existe na lista geral.");
                 throw new Exception();
             }
-        } catch(Exception e){
+        } catch (Exception e) {
             System.out.println("Não foi possível adicional a Transportadora");
         }
     }
 
-    public boolean registrarNegocio(Negocio negocio){
-        try{
+    public boolean registrarNegocio(Negocio negocio) {
+        try {
             boolean idJaExiste = catalogoNegocios.stream()
                     .anyMatch(negociosExistentes -> negociosExistentes.getIdNegocio() == negocio.getIdNegocio());
 
@@ -174,7 +172,7 @@ public class Empresa {
                 System.out.println("Erro: Negocio com o ID " + negocio.getIdNegocio() + " já existe na lista geral.");
                 throw new Exception();
             }
-        } catch(Exception e){
+        } catch (Exception e) {
             System.out.println("Não foi possível adicional a Negocio");
             return false;
         }
@@ -228,6 +226,9 @@ public class Empresa {
 
     }
 
+    public List<Setor> listarSetores() {
+        return new ArrayList<>(setores.values());
+    }
 }
 
 
